@@ -70,6 +70,8 @@ namespace SchoolProject.Service.Implementations
             var trans = _studentRepository.BeginTransaction();
             try
             {
+                student.Address="cairo";
+                await _studentRepository.UpdateAsync(student);
                 await _studentRepository.DeleteAsync(student);
                 await trans.CommitAsync();
                 return "Success";

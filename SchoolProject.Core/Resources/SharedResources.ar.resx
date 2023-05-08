@@ -126,8 +126,14 @@
   <data name="Deleted" xml:space="preserve">
     <value>تم الحذف بنجاح</value>
   </data>
+  <data name="DepartmementId" xml:space="preserve">
+    <value>رقم القسم</value>
+  </data>
   <data name="IsExist" xml:space="preserve">
     <value>موجود بالفعل</value>
+  </data>
+  <data name="IsNotExist" xml:space="preserve">
+    <value> غير موجود</value>
   </data>
   <data name="MaxLengthis100" xml:space="preserve">
     <value>يجب ان لا يذيد طول النص عن 100 </value>
