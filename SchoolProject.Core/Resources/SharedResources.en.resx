@@ -129,6 +129,12 @@
   <data name="DepartmementId" xml:space="preserve">
     <value>Department id</value>
   </data>
+  <data name="EmailIsExist" xml:space="preserve">
+    <value>Email is Already Exist</value>
+  </data>
+  <data name="FaildToAddUser" xml:space="preserve">
+    <value>Failed To Add USer.</value>
+  </data>
   <data name="IsExist" xml:space="preserve">
     <value>Is Already Exist</value>
   </data>
@@ -147,6 +153,9 @@
   <data name="NotFound" xml:space="preserve">
     <value>Not Found</value>
   </data>
+  <data name="PasswordNotEqualConfirmPass" xml:space="preserve">
+    <value>Password And Confirm Password Not Equals.</value>
+  </data>
   <data name="Required" xml:space="preserve">
     <value>This Field Is Required</value>
   </data>
@@ -161,5 +170,8 @@
   </data>
   <data name="Updated" xml:space="preserve">
     <value>Updated Successfully</value>
+  </data>
+  <data name="UserNameIsExist" xml:space="preserve">
+    <value>UserName is Already Exist</value>
   </data>
 </root>
