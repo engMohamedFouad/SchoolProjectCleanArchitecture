@@ -27,7 +27,8 @@ namespace SchoolProject.Infrustructure
                 // User settings.
                 option.User.AllowedUserNameCharacters =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-                option.User.RequireUniqueEmail = false;
+                option.User.RequireUniqueEmail = true;
+                option.SignIn.RequireConfirmedEmail=false;
 
             }).AddEntityFrameworkStores<ApplicationDBContext>().AddDefaultTokenProviders();
 

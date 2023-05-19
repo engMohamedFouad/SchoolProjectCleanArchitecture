@@ -129,6 +129,12 @@
   <data name="DepartmementId" xml:space="preserve">
     <value>رقم القسم</value>
   </data>
+  <data name="EmailIsExist" xml:space="preserve">
+    <value>الايميل الذي ادخلته موجود بالفعل</value>
+  </data>
+  <data name="FaildToAddUser" xml:space="preserve">
+    <value>حدث خطأ اثناء اضافة المستخدم</value>
+  </data>
   <data name="IsExist" xml:space="preserve">
     <value>موجود بالفعل</value>
   </data>
@@ -147,6 +153,9 @@
   <data name="NotFound" xml:space="preserve">
     <value>غير متوفر</value>
   </data>
+  <data name="PasswordNotEqualConfirmPass" xml:space="preserve">
+    <value>الباسورد والباسورد المؤكد يجب ان يكونوا متساويين</value>
+  </data>
   <data name="Required" xml:space="preserve">
     <value>هذا الحقل مطلوب</value>
   </data>
@@ -161,5 +170,8 @@
   </data>
   <data name="Updated" xml:space="preserve">
     <value>تم التعديل بنجاح</value>
+  </data>
+  <data name="UserNameIsExist" xml:space="preserve">
+    <value>اسم المستخدم هذا موجود بالفعل</value>
   </data>
 </root>
