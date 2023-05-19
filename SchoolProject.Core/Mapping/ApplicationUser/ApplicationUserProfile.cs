@@ -1,4 +1,6 @@
-﻿namespace SchoolProject.Core.Mapping.ApplicationUser
+﻿using AutoMapper;
+
+namespace SchoolProject.Core.Mapping.ApplicationUser
 {
     public partial class ApplicationUserProfile : Profile
     {
