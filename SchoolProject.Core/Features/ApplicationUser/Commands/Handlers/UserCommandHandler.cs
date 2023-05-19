@@ -1,13 +1,4 @@
-﻿using AutoMapper;
-using MediatR;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Localization;
-using SchoolProject.Core.Bases;
-using SchoolProject.Core.Features.ApplicationUser.Commands.Models;
-using SchoolProject.Core.Resources;
-using SchoolProject.Data.Entities.Identity;
-
-namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
+﻿namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
 {
     public class UserCommandHandler : ResponseHandler,
         IRequestHandler<AddUserCommand, Response<string>>,

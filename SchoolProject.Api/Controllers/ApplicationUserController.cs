@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SchoolProject.Api.Base;
-using SchoolProject.Core.Features.ApplicationUser.Commands.Models;
-using SchoolProject.Core.Features.ApplicationUser.Queries.Models;
-using SchoolProject.Data.AppMetaData;
-
-namespace SchoolProject.Api.Controllers
+﻿namespace SchoolProject.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
