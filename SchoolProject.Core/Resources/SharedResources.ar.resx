@@ -171,6 +171,9 @@
   <data name="Updated" xml:space="preserve">
     <value>تم التعديل بنجاح</value>
   </data>
+  <data name="UpdateFailed" xml:space="preserve">
+    <value>حدث خطأ اثناء عملية تحديث البيانات</value>
+  </data>
   <data name="UserNameIsExist" xml:space="preserve">
     <value>اسم المستخدم هذا موجود بالفعل</value>
   </data>
