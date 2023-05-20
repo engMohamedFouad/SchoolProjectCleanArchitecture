@@ -33,6 +33,7 @@
             public const string GetByID = Prefix+SignleRoute;
             public const string Edit = Prefix+"/Edit";
             public const string Delete = Prefix+"/{id}";
+            public const string ChangePassword = Prefix+"/Change-Password";
         }
 
     }
