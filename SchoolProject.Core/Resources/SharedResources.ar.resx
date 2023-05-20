@@ -120,6 +120,9 @@
   <data name="BadRequest" xml:space="preserve">
     <value>هذا الطلب لا يمكن فهمه</value>
   </data>
+  <data name="ChangePassFailed" xml:space="preserve">
+    <value>حدث خطأ اثناء عملية تغيير الباسورد</value>
+  </data>
   <data name="Created" xml:space="preserve">
     <value>تم الاضافة بنجاح</value>
   </data>
