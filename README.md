@@ -22,3 +22,5 @@ SchoolProject Using Asp.net Core Web Api Using Clean Architecture Based On Code 
 8.EndPoints Of Operations
 
 9.Allow CORS
+
+10.Using Identity
