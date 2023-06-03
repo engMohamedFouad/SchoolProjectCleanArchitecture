@@ -5,12 +5,13 @@ using SchoolProject.Core.Bases;
 using SchoolProject.Core.Features.Authentication.Commands.Models;
 using SchoolProject.Core.Resources;
 using SchoolProject.Data.Entities.Identity;
+using SchoolProject.Data.Helpers;
 using SchoolProject.Service.Abstracts;
 
 namespace SchoolProject.Core.Features.Authentication.Commands.Handlers
 {
     public class AuthenticationCommandHandler : ResponseHandler,
-        IRequestHandler<SignInCommand, Response<string>>
+        IRequestHandler<SignInCommand, Response<JwtAuthResult>>
     {
 
 
@@ -38,21 +39,21 @@ namespace SchoolProject.Core.Features.Authentication.Commands.Handlers
         #endregion
 
         #region Handle Functions
-        public async Task<Response<string>> Handle(SignInCommand request, CancellationToken cancellationToken)
+        public async Task<Response<JwtAuthResult>> Handle(SignInCommand request, CancellationToken cancellationToken)
         {
             //Check if user is exist or not
             var user = await _userManager.FindByNameAsync(request.UserName);
             //Return The UserName Not Found
-            if (user==null) return BadRequest<string>(_stringLocalizer[SharedResourcesKeys.UserNameIsNotExist]);
+            if (user==null) return BadRequest<JwtAuthResult>(_stringLocalizer[SharedResourcesKeys.UserNameIsNotExist]);
             //try To Sign in 
             var signInResult = _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
             //if Failed Return Passord is wrong
-            if (!signInResult.IsCompletedSuccessfully) return BadRequest<string>(_stringLocalizer[SharedResourcesKeys.PasswordNotCorrect]);
+            if (!signInResult.IsCompletedSuccessfully) return BadRequest<JwtAuthResult>(_stringLocalizer[SharedResourcesKeys.PasswordNotCorrect]);
 
             //Generate Token
-            var accessToken = await _authenticationService.GetJWTToken(user);
+            var result = await _authenticationService.GetJWTToken(user);
             //return Token 
-            return Success(accessToken);
+            return Success(result);
         }
 
         #endregion
