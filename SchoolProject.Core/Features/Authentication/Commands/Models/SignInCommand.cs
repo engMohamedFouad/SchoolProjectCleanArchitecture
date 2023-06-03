@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿
+using MediatR;
 using SchoolProject.Core.Bases;
 using SchoolProject.Data.Helpers;
 

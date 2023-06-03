@@ -7,7 +7,6 @@ using SchoolProject.Core.Resources;
 using SchoolProject.Data.Entities.Identity;
 using SchoolProject.Data.Helpers;
 using SchoolProject.Service.Abstracts;
-
 namespace SchoolProject.Core.Features.Authentication.Commands.Handlers
 {
     public class AuthenticationCommandHandler : ResponseHandler,
