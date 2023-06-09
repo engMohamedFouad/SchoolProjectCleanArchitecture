@@ -10,7 +10,8 @@ using SchoolProject.Service.Abstracts;
 namespace SchoolProject.Core.Features.Authentication.Commands.Handlers
 {
     public class AuthenticationCommandHandler : ResponseHandler,
-        IRequestHandler<SignInCommand, Response<JwtAuthResult>>
+        IRequestHandler<SignInCommand, Response<JwtAuthResult>>,
+        IRequestHandler<RefreshTokenCommand, Response<JwtAuthResult>>
     {
 
 
@@ -52,6 +53,12 @@ namespace SchoolProject.Core.Features.Authentication.Commands.Handlers
             //Generate Token
             var result = await _authenticationService.GetJWTToken(user);
             //return Token 
+            return Success(result);
+        }
+
+        public async Task<Response<JwtAuthResult>> Handle(RefreshTokenCommand request, CancellationToken cancellationToken)
+        {
+            var result = await _authenticationService.GetRefreshToken(request.AccessToken, request.RefreshToken);
             return Success(result);
         }
 
