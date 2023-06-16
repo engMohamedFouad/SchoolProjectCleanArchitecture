@@ -1,7 +1,6 @@
 ﻿using SchoolProject.Data.Entities.Identity;
 using SchoolProject.Data.Helpers;
 using System.IdentityModel.Tokens.Jwt;
-
 namespace SchoolProject.Service.Abstracts
 {
     public interface IAuthenticationService
