@@ -35,7 +35,7 @@ namespace SchoolProject.Core.Features.Authentication.Queries.Handles
             var result = await _authenticationService.ValidateToken(request.AccessToken);
             if (result=="NotExpired")
                 return Success(result);
-            return BadRequest<string>("Expired");
+            return Unauthorized<string>(_stringLocalizer[SharedResourcesKeys.TokenIsExpired]);
         }
 
         #endregion
