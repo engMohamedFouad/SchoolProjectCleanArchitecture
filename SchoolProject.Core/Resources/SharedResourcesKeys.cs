@@ -28,6 +28,13 @@
         public const string UserNameIsNotExist = "UserNameIsNotExist";
         public const string PasswordNotCorrect = "PasswordNotCorrect";
 
+        public const string AlgorithmIsWrong = "AlgorithmIsWrong";
+        public const string TokenIsNotExpired = "TokenIsNotExpired";
+        public const string RefreshTokenIsNotFound = "RefreshTokenIsNotFound";
+        public const string RefreshTokenIsExpired = "RefreshTokenIsExpired";
+        public const string TokenIsExpired = "TokenIsExpired";
+
+
 
     }
 }
