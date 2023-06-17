@@ -57,6 +57,15 @@ namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
             if (!createResult.Succeeded)
                 return BadRequest<string>(createResult.Errors.FirstOrDefault().Description);
             //message
+            var users = await _userManager.Users.ToListAsync();
+            if (users.Count>=0)
+            {
+                await _userManager.AddToRoleAsync(identityUser, "User");
+            }
+            else
+            {
+                await _userManager.AddToRoleAsync(identityUser, "Admin");
+            }
 
             //Sucess
             return Created("");
