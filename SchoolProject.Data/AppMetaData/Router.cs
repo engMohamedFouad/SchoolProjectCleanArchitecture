@@ -43,6 +43,11 @@
             public const string ValidateToken = Prefix+"/Validate-Token";
 
         }
+        public static class AuthorizationRouting
+        {
+            public const string Prefix = Rule+"AuthorizationRouting";
+            public const string Create = Prefix+"/Create";
+        }
 
 
 
