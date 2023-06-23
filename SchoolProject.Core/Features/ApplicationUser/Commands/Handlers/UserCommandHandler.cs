@@ -7,7 +7,6 @@ using SchoolProject.Core.Bases;
 using SchoolProject.Core.Features.ApplicationUser.Commands.Models;
 using SchoolProject.Core.Resources;
 using SchoolProject.Data.Entities.Identity;
-
 namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
 {
     public class UserCommandHandler : ResponseHandler,
@@ -56,17 +55,8 @@ namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
             //Failed
             if (!createResult.Succeeded)
                 return BadRequest<string>(createResult.Errors.FirstOrDefault().Description);
-            //message
-            var users = await _userManager.Users.ToListAsync();
-            if (users.Count>=0)
-            {
-                await _userManager.AddToRoleAsync(identityUser, "User");
-            }
-            else
-            {
-                await _userManager.AddToRoleAsync(identityUser, "Admin");
-            }
 
+            await _userManager.AddToRoleAsync(identityUser, "User");
             //Sucess
             return Created("");
         }
