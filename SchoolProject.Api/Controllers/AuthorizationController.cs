@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using SchoolProject.Api.Base;
 using SchoolProject.Core.Features.Authorization.Commands.Models;
 using SchoolProject.Data.AppMetaData;
-
 namespace SchoolProject.Api.Controllers
 {
     [ApiController]
