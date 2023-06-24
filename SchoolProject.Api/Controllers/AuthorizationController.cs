@@ -9,6 +9,13 @@ namespace SchoolProject.Api.Controllers
     [Authorize(Roles = "Admin")]
     public class AuthorizationController : AppControllerBase
     {
+        [HttpGet("/Get")]
+        public IActionResult GetTest()
+        {
+            return Content("");
+        }
+
+        [Authorize(Roles = "User")]
         [HttpPost(Router.AuthorizationRouting.Create)]
         public async Task<IActionResult> Create([FromForm] AddRoleCommand command)
         {
