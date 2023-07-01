@@ -2,7 +2,6 @@
 using SchoolProject.Data.DTOs;
 using SchoolProject.Data.Entities.Identity;
 using SchoolProject.Service.Abstracts;
-
 namespace SchoolProject.Service.Implementations
 {
 

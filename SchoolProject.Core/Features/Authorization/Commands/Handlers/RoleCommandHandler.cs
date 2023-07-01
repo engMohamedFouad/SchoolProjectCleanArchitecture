@@ -4,7 +4,6 @@ using SchoolProject.Core.Bases;
 using SchoolProject.Core.Features.Authorization.Commands.Models;
 using SchoolProject.Core.Resources;
 using SchoolProject.Service.Abstracts;
-
 namespace SchoolProject.Core.Features.Authorization.Commands.Handlers
 {
     public class RoleCommandHandler : ResponseHandler,

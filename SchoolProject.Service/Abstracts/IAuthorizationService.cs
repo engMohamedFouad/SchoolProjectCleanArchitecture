@@ -1,5 +1,4 @@
 ﻿using SchoolProject.Data.DTOs;
-
 namespace SchoolProject.Service.Abstracts
 {
     public interface IAuthorizationService
