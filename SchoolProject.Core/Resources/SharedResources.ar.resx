@@ -210,6 +210,9 @@
   <data name="UpdateFailed" xml:space="preserve">
     <value>حدث خطأ اثناء عملية تحديث البيانات</value>
   </data>
+  <data name="UserIsNotFound" xml:space="preserve">
+    <value>المستخدم غير موجود</value>
+  </data>
   <data name="UserName" xml:space="preserve">
     <value>اسم المستخدم</value>
   </data>

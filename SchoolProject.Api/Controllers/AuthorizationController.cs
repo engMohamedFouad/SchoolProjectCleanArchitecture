@@ -2,7 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using SchoolProject.Api.Base;
 using SchoolProject.Core.Features.Authorization.Commands.Models;
+using SchoolProject.Core.Features.Authorization.Quaries.Models;
 using SchoolProject.Data.AppMetaData;
+using Swashbuckle.AspNetCore.Annotations;
+
 namespace SchoolProject.Api.Controllers
 {
     [ApiController]
@@ -27,5 +30,27 @@ namespace SchoolProject.Api.Controllers
             var response = await Mediator.Send(new DeleteRoleCommand(id));
             return NewResult(response);
         }
+        [HttpGet(Router.AuthorizationRouting.RoleList)]
+        public async Task<IActionResult> GetRoleList()
+        {
+            var response = await Mediator.Send(new GetRolesListQuery());
+            return NewResult(response);
+        }
+        [SwaggerOperation(Summary = "idالصلاحية عن طريق ال", OperationId = "RoleById")]
+        [HttpGet(Router.AuthorizationRouting.GetRoleById)]
+        public async Task<IActionResult> GetRoleById([FromRoute] int id)
+        {
+            var response = await Mediator.Send(new GetRoleByIdQuery() { Id=id });
+            return NewResult(response);
+        }
+        [SwaggerOperation(Summary = " ادارة صلاحيات المستخدمين", OperationId = "ManageUserRoles")]
+        [HttpGet(Router.AuthorizationRouting.ManageUserRoles)]
+        public async Task<IActionResult> ManageUserRoles([FromRoute] int userId)
+        {
+            var response = await Mediator.Send(new ManageUserRolesQuery() { UserId=userId });
+            return NewResult(response);
+        }
+
+
     }
 }

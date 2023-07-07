@@ -49,6 +49,9 @@
             public const string Create = Prefix+"/Role/Create";
             public const string Edit = Prefix+"/Role/Edit";
             public const string Delete = Prefix+"/Role/Delete/{id}";
+            public const string RoleList = Prefix+"/Role-List";
+            public const string GetRoleById = Prefix+"/Role-By-Id/{id}";
+            public const string ManageUserRoles = Prefix+"/Manage-User-Roles/{userId}";
         }
 
 
