@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Authentication\Commands\Results\" />
-    <Folder Include="Features\Authorization\Quaries\" />
     <Folder Include="Features\Department\Commands\" />
     <Folder Include="Mapping\Departments\CommandMapping\" />
   </ItemGroup>

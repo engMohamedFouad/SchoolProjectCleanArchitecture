@@ -210,6 +210,9 @@
   <data name="UpdateFailed" xml:space="preserve">
     <value>Update Operation Failed</value>
   </data>
+  <data name="UserIsNotFound" xml:space="preserve">
+    <value>User Is Not Found</value>
+  </data>
   <data name="UserName" xml:space="preserve">
     <value>User Name</value>
   </data>
