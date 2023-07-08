@@ -147,6 +147,15 @@
   <data name="FaildToAddUser" xml:space="preserve">
     <value>Failed To Add USer.</value>
   </data>
+  <data name="FailedToAddNewRoles" xml:space="preserve">
+    <value>Operation is Failed To Add User Roles</value>
+  </data>
+  <data name="FailedToRemoveOldRoles" xml:space="preserve">
+    <value>Operation is Failed To Remove Old Roles</value>
+  </data>
+  <data name="FailedToUpdateUserRoles" xml:space="preserve">
+    <value>Operation is Failed To Update User Roles</value>
+  </data>
   <data name="IsExist" xml:space="preserve">
     <value>Is Already Exist</value>
   </data>

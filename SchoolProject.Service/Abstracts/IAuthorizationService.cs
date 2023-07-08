@@ -12,5 +12,6 @@ namespace SchoolProject.Service.Abstracts
         public Task<List<Role>> GetRolesList();
         public Task<Role> GetRoleById(int id);
         public Task<ManageUserRolesResult> GetManageUserRolesData(User user);
+        public Task<string> UpdateUserRoles(UpdateUserRolesRequest request);
     }
 }

@@ -37,6 +37,10 @@
         public const string RoleNotExist = "RoleNotExist";
         public const string RoleIsUsed = "RoleIsUsed";
         public const string UserIsNotFound = "UserIsNotFound";
+        public const string FailedToRemoveOldRoles = "FailedToRemoveOldRoles";
+        public const string FailedToUpdateUserRoles = "FailedToUpdateUserRoles";
+        public const string FailedToAddNewRoles = "FailedToAddNewRoles";
+
 
 
 

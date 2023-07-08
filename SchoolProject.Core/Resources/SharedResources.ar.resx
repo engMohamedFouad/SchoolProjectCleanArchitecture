@@ -147,6 +147,15 @@
   <data name="FaildToAddUser" xml:space="preserve">
     <value>حدث خطأ اثناء اضافة المستخدم</value>
   </data>
+  <data name="FailedToAddNewRoles" xml:space="preserve">
+    <value>فشلت عملية اضافة صلاحيات جديدة للمستخدم</value>
+  </data>
+  <data name="FailedToRemoveOldRoles" xml:space="preserve">
+    <value>فشلت عملية حذف الصلاحيات القديمة</value>
+  </data>
+  <data name="FailedToUpdateUserRoles" xml:space="preserve">
+    <value>فشلت عملية تحديث الصلاحيات للمستخدم</value>
+  </data>
   <data name="IsExist" xml:space="preserve">
     <value>موجود بالفعل</value>
   </data>
