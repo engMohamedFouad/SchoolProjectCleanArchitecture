@@ -5,7 +5,6 @@ using SchoolProject.Core.Features.Authorization.Commands.Models;
 using SchoolProject.Core.Features.Authorization.Quaries.Models;
 using SchoolProject.Data.AppMetaData;
 using Swashbuckle.AspNetCore.Annotations;
-
 namespace SchoolProject.Api.Controllers
 {
     [ApiController]
