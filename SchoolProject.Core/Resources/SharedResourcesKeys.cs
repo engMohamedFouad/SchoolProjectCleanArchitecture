@@ -43,7 +43,7 @@
 
         public const string FailedToUpdateClaims = "FailedToUpdateClaims";
         public const string FailedToAddNewClaims = "FailedToAddNewClaims";
-        public const string FailedToRemoveOldCliams = "FailedToRemoveOldCliams";
+        public const string FailedToRemoveOldClaims = "FailedToRemoveOldClaims";
 
 
     }

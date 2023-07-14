@@ -9,7 +9,6 @@ using SchoolProject.Infrustructure.Data;
 using SchoolProject.Service.Abstracts;
 using System.Data;
 using System.Security.Claims;
-
 namespace SchoolProject.Service.Implementations
 {
 
@@ -199,7 +198,7 @@ namespace SchoolProject.Service.Implementations
                 var userClaims = await _userManager.GetClaimsAsync(user);
                 var removeClaimsResult = await _userManager.RemoveClaimsAsync(user, userClaims);
                 if (!removeClaimsResult.Succeeded)
-                    return "FailedToRemoveOldCliams";
+                    return "FailedToRemoveOldClaims";
                 var claims = request.userClaims.Where(x => x.Value==true).Select(x => new Claim(x.Type, x.Value.ToString()));
 
                 var addUserClaimResult = await _userManager.AddClaimsAsync(user, claims);

@@ -2,7 +2,6 @@
 using SchoolProject.Data.Entities.Identity;
 using SchoolProject.Data.Requests;
 using SchoolProject.Data.Results;
-
 namespace SchoolProject.Service.Abstracts
 {
     public interface IAuthorizationService

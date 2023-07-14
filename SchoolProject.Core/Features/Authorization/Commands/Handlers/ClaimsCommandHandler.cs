@@ -30,7 +30,7 @@ namespace SchoolProject.Core.Features.Authorization.Commands.Handlers
             switch (result)
             {
                 case "UserIsNull": return NotFound<string>(_stringLocalizer[SharedResourcesKeys.UserIsNotFound]);
-                case "FailedToRemoveOldCliams": return BadRequest<string>(_stringLocalizer[SharedResourcesKeys.FailedToRemoveOldCliams]);
+                case "FailedToRemoveOldClaims": return BadRequest<string>(_stringLocalizer[SharedResourcesKeys.FailedToRemoveOldClaims]);
                 case "FailedToAddNewClaims": return BadRequest<string>(_stringLocalizer[SharedResourcesKeys.FailedToAddNewClaims]);
                 case "FailedToUpdateClaims": return BadRequest<string>(_stringLocalizer[SharedResourcesKeys.FailedToUpdateClaims]);
             }
