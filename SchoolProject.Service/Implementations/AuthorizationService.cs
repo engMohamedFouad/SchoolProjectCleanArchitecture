@@ -100,8 +100,6 @@ namespace SchoolProject.Service.Implementations
         {
             var response = new ManageUserRolesResult();
             var rolesList = new List<UserRoles>();
-            //userroles
-            var userRoles = await _userManager.GetRolesAsync(user);
             //Roles
             var roles = await _roleManager.Roles.ToListAsync();
             response.UserId = user.Id;
@@ -110,7 +108,7 @@ namespace SchoolProject.Service.Implementations
                 var userrole = new UserRoles();
                 userrole.Id = role.Id;
                 userrole.Name=role.Name;
-                if (userRoles.Contains(role.Name))
+                if (await _userManager.IsInRoleAsync(user, role.Name))
                 {
                     userrole.HasRole = true;
                 }
