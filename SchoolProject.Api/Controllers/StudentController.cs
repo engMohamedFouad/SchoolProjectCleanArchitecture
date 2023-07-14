@@ -8,7 +8,7 @@ using SchoolProject.Data.AppMetaData;
 namespace SchoolProject.Api.Controllers
 {
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class StudentController : AppControllerBase
     {
         [HttpGet(Router.StudentRouting.List)]
@@ -29,19 +29,21 @@ namespace SchoolProject.Api.Controllers
         {
             return NewResult(await Mediator.Send(new GetStudentByIDQuery(id)));
         }
-
+        [Authorize(Policy = "CreateStudent")]
         [HttpPost(Router.StudentRouting.Create)]
         public async Task<IActionResult> Create([FromBody] AddStudentCommand command)
         {
             var response = await Mediator.Send(command);
             return NewResult(response);
         }
+        [Authorize(Policy = "EditStudent")]
         [HttpPut(Router.StudentRouting.Edit)]
         public async Task<IActionResult> Edit([FromBody] EditStudentCommand command)
         {
             var response = await Mediator.Send(command);
             return NewResult(response);
         }
+        [Authorize(Policy = "DeleteStudent")]
         [HttpDelete(Router.StudentRouting.Delete)]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
