@@ -141,6 +141,9 @@
   <data name="DepartmementId" xml:space="preserve">
     <value>رقم القسم</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>الايميل</value>
+  </data>
   <data name="EmailIsExist" xml:space="preserve">
     <value>الايميل الذي ادخلته موجود بالفعل</value>
   </data>
@@ -174,6 +177,9 @@
   <data name="MaxLengthis100" xml:space="preserve">
     <value>يجب ان لا يذيد طول النص عن 100 </value>
   </data>
+  <data name="Message" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
   </data>
@@ -206,6 +212,9 @@
   </data>
   <data name="RoleNotExist" xml:space="preserve">
     <value>هذه الصلاحية ليست موجوده</value>
+  </data>
+  <data name="SendEmailFailed" xml:space="preserve">
+    <value>حدث خطأ اثناء ارسال الايميل</value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>تمت العملية بنجاح</value>

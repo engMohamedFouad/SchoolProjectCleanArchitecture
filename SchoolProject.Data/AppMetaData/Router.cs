@@ -58,6 +58,11 @@
             public const string UpdateUserRoles = Roles+"/Update-User-Roles";
             public const string UpdateUserClaims = Claims+"/Update-User-Claims";
         }
+        public static class EmailsRoute
+        {
+            public const string Prefix = Rule+"EmailsRoute";
+            public const string SendEmail = Prefix+"/SendEmail";
+        }
 
 
 

@@ -141,6 +141,9 @@
   <data name="DepartmementId" xml:space="preserve">
     <value>Department id</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="EmailIsExist" xml:space="preserve">
     <value>Email is Already Exist</value>
   </data>
@@ -174,6 +177,9 @@
   <data name="MaxLengthis100" xml:space="preserve">
     <value>The Max Length is 100</value>
   </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
@@ -206,6 +212,9 @@
   </data>
   <data name="RoleNotExist" xml:space="preserve">
     <value>Role is not exist</value>
+  </data>
+  <data name="SendEmailFailed" xml:space="preserve">
+    <value>Operation to send email failed.</value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>operation is done</value>
