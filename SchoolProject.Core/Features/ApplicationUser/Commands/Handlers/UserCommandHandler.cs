@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
@@ -7,6 +8,8 @@ using SchoolProject.Core.Bases;
 using SchoolProject.Core.Features.ApplicationUser.Commands.Models;
 using SchoolProject.Core.Resources;
 using SchoolProject.Data.Entities.Identity;
+using SchoolProject.Service.Abstracts;
+
 namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
 {
     public class UserCommandHandler : ResponseHandler,
@@ -19,16 +22,25 @@ namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
         private readonly IMapper _mapper;
         private readonly IStringLocalizer<SharedResources> _sharedResources;
         private readonly UserManager<User> _userManager;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IEmailsService _emailsService;
+        private readonly IApplicationUserService _applicationUserService;
         #endregion
 
         #region Constructors
         public UserCommandHandler(IStringLocalizer<SharedResources> stringLocalizer,
                                   IMapper mapper,
-                                  UserManager<User> userManager) : base(stringLocalizer)
+                                  UserManager<User> userManager,
+                                  IHttpContextAccessor httpContextAccessor,
+                                  IEmailsService emailsService,
+                                  IApplicationUserService applicationUserService) : base(stringLocalizer)
         {
             _mapper = mapper;
             _sharedResources = stringLocalizer;
             _userManager= userManager;
+            _httpContextAccessor = httpContextAccessor;
+            _emailsService = emailsService;
+            _applicationUserService = applicationUserService;
         }
 
 
@@ -38,27 +50,18 @@ namespace SchoolProject.Core.Features.ApplicationUser.Commands.Handlers
 
         public async Task<Response<string>> Handle(AddUserCommand request, CancellationToken cancellationToken)
         {
-            //if Email is Exist
-            var user = await _userManager.FindByEmailAsync(request.Email);
-            //email is Exist
-            if (user!=null) return BadRequest<string>(_sharedResources[SharedResourcesKeys.EmailIsExist]);
-
-            //if username is Exist
-            var userByUserName = await _userManager.FindByNameAsync(request.UserName);
-            //username is Exist
-            if (userByUserName!=null) return BadRequest<string>(_sharedResources[SharedResourcesKeys.UserNameIsExist]);
-
-            //Mapping
             var identityUser = _mapper.Map<User>(request);
             //Create
-            var createResult = await _userManager.CreateAsync(identityUser, request.Password);
-            //Failed
-            if (!createResult.Succeeded)
-                return BadRequest<string>(createResult.Errors.FirstOrDefault().Description);
-
-            await _userManager.AddToRoleAsync(identityUser, "User");
-            //Sucess
-            return Created("");
+            var createResult = await _applicationUserService.AddUserAsync(identityUser, request.Password);
+            switch (createResult)
+            {
+                case "EmailIsExist": return BadRequest<string>(_sharedResources[SharedResourcesKeys.EmailIsExist]);
+                case "UserNameIsExist": return BadRequest<string>(_sharedResources[SharedResourcesKeys.UserNameIsExist]);
+                case "ErrorInCreateUser": return BadRequest<string>(_sharedResources[SharedResourcesKeys.FaildToAddUser]);
+                case "Failed": return BadRequest<string>(_sharedResources[SharedResourcesKeys.TryToRegisterAgain]);
+                case "Success": return Success<string>("");
+                default: return BadRequest<string>(createResult);
+            }
         }
 
         public async Task<Response<string>> Handle(EditUserCommand request, CancellationToken cancellationToken)
