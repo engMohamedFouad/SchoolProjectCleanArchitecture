@@ -4,7 +4,6 @@ using SchoolProject.Core.Bases;
 using SchoolProject.Core.Features.Emails.Commands.Models;
 using SchoolProject.Core.Resources;
 using SchoolProject.Service.Abstracts;
-
 namespace SchoolProject.Core.Features.Emails.Commands.Handlers
 {
     public class EmailsCommandHandler : ResponseHandler,

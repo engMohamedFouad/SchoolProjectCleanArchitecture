@@ -1,8 +1,8 @@
-﻿using MailKit.Net.Smtp;
+﻿
+using MailKit.Net.Smtp;
 using MimeKit;
 using SchoolProject.Data.Helpers;
 using SchoolProject.Service.Abstracts;
-
 namespace SchoolProject.Service.Implementations
 {
     public class EmailsService : IEmailsService
