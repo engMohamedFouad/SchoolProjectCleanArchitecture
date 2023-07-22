@@ -35,13 +35,13 @@ namespace SchoolProject.Api.Controllers
             var response = await Mediator.Send(query);
             return NewResult(response);
         }
-        [HttpPost(Router.Authentication.SendResetPassword)]
+        [HttpPost(Router.Authentication.SendResetPasswordCode)]
         public async Task<IActionResult> SendResetPassword([FromQuery] SendResetPasswordCommand command)
         {
             var response = await Mediator.Send(command);
             return NewResult(response);
         }
-        [HttpGet(Router.Authentication.ConfirmResetPassword)]
+        [HttpGet(Router.Authentication.ConfirmResetPasswordCode)]
         public async Task<IActionResult> ConfirmResetPassword([FromQuery] ConfirmResetPasswordQuery query)
         {
             var response = await Mediator.Send(query);
