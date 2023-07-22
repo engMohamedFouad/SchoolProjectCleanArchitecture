@@ -129,6 +129,9 @@
   <data name="ChangePassFailed" xml:space="preserve">
     <value>Change Password Failed</value>
   </data>
+  <data name="ConfirmEmailDone" xml:space="preserve">
+    <value>Confirm Email Done</value>
+  </data>
   <data name="Created" xml:space="preserve">
     <value>Created Successfully</value>
   </data>
@@ -146,6 +149,12 @@
   </data>
   <data name="EmailIsExist" xml:space="preserve">
     <value>Email is Already Exist</value>
+  </data>
+  <data name="EmailNotConfirmed" xml:space="preserve">
+    <value>Please Confirm Your Email</value>
+  </data>
+  <data name="ErrorWhenConfirmEmail" xml:space="preserve">
+    <value>Error Occur When Confirm Email</value>
   </data>
   <data name="FaildToAddUser" xml:space="preserve">
     <value>Failed To Add USer.</value>
@@ -167,6 +176,9 @@
   </data>
   <data name="FailedToUpdateUserRoles" xml:space="preserve">
     <value>Operation is Failed To Update User Roles</value>
+  </data>
+  <data name="InvaildCode" xml:space="preserve">
+    <value>Invaild Code</value>
   </data>
   <data name="IsExist" xml:space="preserve">
     <value>Is Already Exist</value>
@@ -224,6 +236,12 @@
   </data>
   <data name="TokenIsNotExpired" xml:space="preserve">
     <value>Token Is Not Expired</value>
+  </data>
+  <data name="TryAgainInAnotherTime" xml:space="preserve">
+    <value>Try Again In Another Time</value>
+  </data>
+  <data name="TryToRegisterAgain" xml:space="preserve">
+    <value>Operation Is Failed, Try To Register Again</value>
   </data>
   <data name="UnAuthorized" xml:space="preserve">
     <value>You are not Authorized To Access This Resources</value>

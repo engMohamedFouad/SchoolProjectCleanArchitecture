@@ -129,6 +129,9 @@
   <data name="ChangePassFailed" xml:space="preserve">
     <value>حدث خطأ اثناء عملية تغيير الباسورد</value>
   </data>
+  <data name="ConfirmEmailDone" xml:space="preserve">
+    <value>تم التأكيد الايميل بنجاح</value>
+  </data>
   <data name="Created" xml:space="preserve">
     <value>تم الاضافة بنجاح</value>
   </data>
@@ -146,6 +149,12 @@
   </data>
   <data name="EmailIsExist" xml:space="preserve">
     <value>الايميل الذي ادخلته موجود بالفعل</value>
+  </data>
+  <data name="EmailNotConfirmed" xml:space="preserve">
+    <value>من فضلك قم بتأكيد الايميل</value>
+  </data>
+  <data name="ErrorWhenConfirmEmail" xml:space="preserve">
+    <value>حدث خطأ اثناء تأكيد الايميل</value>
   </data>
   <data name="FaildToAddUser" xml:space="preserve">
     <value>حدث خطأ اثناء اضافة المستخدم</value>
@@ -167,6 +176,9 @@
   </data>
   <data name="FailedToUpdateUserRoles" xml:space="preserve">
     <value>فشلت عملية تحديث الصلاحيات للمستخدم</value>
+  </data>
+  <data name="InvaildCode" xml:space="preserve">
+    <value>هذا الكود غير صحيح</value>
   </data>
   <data name="IsExist" xml:space="preserve">
     <value>موجود بالفعل</value>
@@ -224,6 +236,12 @@
   </data>
   <data name="TokenIsNotExpired" xml:space="preserve">
     <value>رمز الوصول الذي تستخدمة ليس منتهي</value>
+  </data>
+  <data name="TryAgainInAnotherTime" xml:space="preserve">
+    <value>حدث خطأ اثناء العملية من فضلك حاول  مره اخري في وقت لاحق</value>
+  </data>
+  <data name="TryToRegisterAgain" xml:space="preserve">
+    <value>حدث خطأ غير متوقع اعد المحاولة مره اخري</value>
   </data>
   <data name="UnAuthorized" xml:space="preserve">
     <value>لا تملك الصلاحية للوصول لتلك المصادر</value>

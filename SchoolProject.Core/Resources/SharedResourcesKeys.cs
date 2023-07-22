@@ -47,6 +47,12 @@
         public const string Email = "Email";
         public const string Message = "Message";
         public const string SendEmailFailed = "SendEmailFailed";
+        public const string EmailNotConfirmed = "EmailNotConfirmed";
+        public const string TryToRegisterAgain = "TryToRegisterAgain";
+        public const string ErrorWhenConfirmEmail = "ErrorWhenConfirmEmail";
+        public const string ConfirmEmailDone = "ConfirmEmailDone";
+        public const string TryAgainInAnotherTime = "TryAgainInAnotherTime";
+        public const string InvaildCode = "InvaildCode";
 
 
     }

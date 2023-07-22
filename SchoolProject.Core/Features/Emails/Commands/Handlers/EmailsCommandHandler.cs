@@ -25,7 +25,7 @@ namespace SchoolProject.Core.Features.Emails.Commands.Handlers
         #region Handle Functions
         public async Task<Response<string>> Handle(SendEmailCommand request, CancellationToken cancellationToken)
         {
-            var response = await _emailsService.SendEmail(request.Email, request.Message);
+            var response = await _emailsService.SendEmail(request.Email, request.Message, null);
             if (response=="Success")
                 return Success<string>("");
             return BadRequest<string>(_stringLocalizer[SharedResourcesKeys.SendEmailFailed]);

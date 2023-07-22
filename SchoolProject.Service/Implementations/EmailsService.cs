@@ -18,7 +18,7 @@ namespace SchoolProject.Service.Implementations
 
         #endregion
         #region Handle Functions
-        public async Task<string> SendEmail(string email, string Message)
+        public async Task<string> SendEmail(string email, string Message, string? reason)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace SchoolProject.Service.Implementations
                     };
                     message.From.Add(new MailboxAddress("Future Team", _emailSettings.FromEmail));
                     message.To.Add(new MailboxAddress("testing", email));
-                    message.Subject = "new Contact Submitted Data";
+                    message.Subject = reason==null ? "No Submitted" : reason;
                     await client.SendAsync(message);
                     await client.DisconnectAsync(true);
                 }
