@@ -29,4 +29,8 @@ SchoolProject Using Asp.net Core Web Api Using Clean Architecture Based On Code 
 
 12.Added JWT Token And SwaggerGen
 
-13.Authorizations
+13.Authorizations(Roles,Cliams)
+
+14.Service Like Send Email
+
+15.Filters
