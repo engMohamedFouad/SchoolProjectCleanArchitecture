@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using SchoolProject.Core;
+using SchoolProject.Core.Filters;
 using SchoolProject.Core.MiddleWare;
 using SchoolProject.Data.Entities.Identity;
 using SchoolProject.Infrustructure;
@@ -86,6 +87,7 @@ builder.Services.AddTransient<IUrlHelper>(x =>
     var factory = x.GetRequiredService<IUrlHelperFactory>();
     return factory.GetUrlHelper(actionContext);
 });
+builder.Services.AddTransient<AuthFilter>();
 
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
