@@ -20,7 +20,7 @@ namespace SchoolProject.Data.Entities
         public string? Position { get; set; }
         public int? SupervisorId { get; set; }
         public decimal? Salary { get; set; }
-
+        public string? Image { get; set; }
         public int DID { get; set; }
         [ForeignKey(nameof(DID))]
         [InverseProperty("Instructors")]
