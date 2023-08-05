@@ -6,8 +6,6 @@ using SchoolProject.Infrustructure.Abstracts.Functions;
 using SchoolProject.Infrustructure.Data;
 using SchoolProject.Service.Abstracts;
 using System.Data;
-
-
 namespace SchoolProject.Service.Implementations
 {
     public class InstructorService : IInstructorService
