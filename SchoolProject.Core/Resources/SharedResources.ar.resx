@@ -177,6 +177,9 @@
   <data name="FailedToUpdateUserRoles" xml:space="preserve">
     <value>فشلت عملية تحديث الصلاحيات للمستخدم</value>
   </data>
+  <data name="FailedToUploadImage" xml:space="preserve">
+    <value>حدث خطأ اثناء رفع الصورة</value>
+  </data>
   <data name="InvaildCode" xml:space="preserve">
     <value>هذا الكود غير صحيح</value>
   </data>
@@ -194,6 +197,9 @@
   </data>
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
+  </data>
+  <data name="NoImage" xml:space="preserve">
+    <value>من فضلك قم بإختيار صورة</value>
   </data>
   <data name="NotEmpty" xml:space="preserve">
     <value>لا يمكن ترك العنصر فارغ</value>

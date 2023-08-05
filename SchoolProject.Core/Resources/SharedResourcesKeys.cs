@@ -53,6 +53,8 @@
         public const string ConfirmEmailDone = "ConfirmEmailDone";
         public const string TryAgainInAnotherTime = "TryAgainInAnotherTime";
         public const string InvaildCode = "InvaildCode";
+        public const string NoImage = "NoImage";
+        public const string FailedToUploadImage = "FailedToUploadImage";
 
 
     }

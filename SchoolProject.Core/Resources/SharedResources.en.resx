@@ -177,6 +177,9 @@
   <data name="FailedToUpdateUserRoles" xml:space="preserve">
     <value>Operation is Failed To Update User Roles</value>
   </data>
+  <data name="FailedToUploadImage" xml:space="preserve">
+    <value>Failed To Upload Image</value>
+  </data>
   <data name="InvaildCode" xml:space="preserve">
     <value>Invaild Code</value>
   </data>
@@ -194,6 +197,9 @@
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="NoImage" xml:space="preserve">
+    <value>Please Select Image</value>
   </data>
   <data name="NotEmpty" xml:space="preserve">
     <value>Must Not Empty</value>
