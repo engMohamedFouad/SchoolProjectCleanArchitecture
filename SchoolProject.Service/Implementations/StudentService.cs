@@ -3,6 +3,7 @@ using SchoolProject.Data.Entities;
 using SchoolProject.Data.Enums;
 using SchoolProject.Infrustructure.Abstracts;
 using SchoolProject.Service.Abstracts;
+using Serilog;
 
 namespace SchoolProject.Service.Implementations
 {
@@ -70,15 +71,14 @@ namespace SchoolProject.Service.Implementations
             var trans = _studentRepository.BeginTransaction();
             try
             {
-                student.Address="cairo";
-                await _studentRepository.UpdateAsync(student);
                 await _studentRepository.DeleteAsync(student);
                 await trans.CommitAsync();
                 return "Success";
             }
-            catch
+            catch (Exception ex)
             {
                 await trans.RollbackAsync();
+                Log.Error(ex.Message);
                 return "Falied";
             }
 
