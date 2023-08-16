@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SchoolProject.Api.Base;
 using SchoolProject.Core.Features.Department.Queries.Models;
 using SchoolProject.Data.AppMetaData;
@@ -6,6 +7,7 @@ using SchoolProject.Data.AppMetaData;
 namespace SchoolProject.Api.Controllers
 {
     [ApiController]
+    [Authorize(Roles = "Admin")]
     public class DepartmentController : AppControllerBase
     {
         [HttpGet(Router.DepartmentRouting.GetByID)]

@@ -8,6 +8,7 @@ namespace SchoolProject.Api.Controllers
 {
 
     [ApiController]
+
     public class AuthenticationController : AppControllerBase
     {
 
@@ -17,6 +18,7 @@ namespace SchoolProject.Api.Controllers
             var response = await Mediator.Send(command);
             return NewResult(response);
         }
+
         [HttpPost(Router.Authentication.RefreshToken)]
         public async Task<IActionResult> RefreshToken([FromForm] RefreshTokenCommand command)
         {
