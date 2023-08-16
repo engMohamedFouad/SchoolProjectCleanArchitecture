@@ -108,6 +108,21 @@ namespace SchoolProject.Infrustructure.InfrastructureBases
             _dbContext.Set<T>().UpdateRange(entities);
             await _dbContext.SaveChangesAsync();
         }
+
+        public async Task<IDbContextTransaction> BeginTransactionAsync()
+        {
+            return await _dbContext.Database.BeginTransactionAsync();
+        }
+
+        public async Task CommitAsync()
+        {
+            await _dbContext.Database.CommitTransactionAsync();
+        }
+
+        public async Task RollBackAsync()
+        {
+            await _dbContext.Database.RollbackTransactionAsync();
+        }
         #endregion
     }
 }

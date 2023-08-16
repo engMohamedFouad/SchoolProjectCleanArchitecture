@@ -38,14 +38,7 @@ namespace SchoolProject.Service.Implementations
         public async Task<decimal> GetSalarySummationOfInstructor()
         {
             decimal result = 0;
-            using (var cmd = _dbContext.Database.GetDbConnection().CreateCommand())
-            {
-                if (cmd.Connection.State!=ConnectionState.Open)
-                {
-                    cmd.Connection.Open();
-                }
-                result= _instructorFunctionsRepository.GetSalarySummationOfInstructor("select dbo.GetSalarySummation()", cmd);
-            }
+            result= _instructorFunctionsRepository.GetSalarySummationOfInstructor("select dbo.GetSalarySummation()");
             return result;
         }
 
