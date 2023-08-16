@@ -31,6 +31,8 @@ SchoolProject Using Asp.net Core Web Api Using Clean Architecture Based On Code 
 
 13.Authorizations(Roles,Claims)
 
-14.Service Like Send Email
+14.Service Like Send (Email,Upload Image)
 
 15.Filters
+
+16.Database Operations(Views,Procedures,Functions) Endpoint
