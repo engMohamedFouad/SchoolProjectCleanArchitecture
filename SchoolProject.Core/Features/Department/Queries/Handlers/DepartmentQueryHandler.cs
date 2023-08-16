@@ -56,6 +56,7 @@ namespace SchoolProject.Core.Features.Department.Queries.Handlers
             var PaginatedList = await studentQuerable.Select(expression).ToPaginatedListAsync(request.StudentPageNumber, request.StudentPageSize);
             mapper.StudentList = PaginatedList;
 
+            // Log.Information($"Get Department By Id {request.Id}!");
             //return response
             return Success(mapper);
         }
