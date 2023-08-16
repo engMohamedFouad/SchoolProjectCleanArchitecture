@@ -36,3 +36,5 @@ SchoolProject Using Asp.net Core Web Api Using Clean Architecture Based On Code 
 15.Filters
 
 16.Database Operations(Views,Procedures,Functions) Endpoint
+
+17.Logs
