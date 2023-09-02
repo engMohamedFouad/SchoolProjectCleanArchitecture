@@ -81,7 +81,6 @@ namespace SchoolProject.XUnitTest
         {
             int x = 5;
             x.Should().BePositive();
-            x.Should().BeNegative();
             x.Should().BeGreaterThanOrEqualTo(5);
             x.Should().BeGreaterThan(4);
             x.Should().NotBeInRange(4, 6);
