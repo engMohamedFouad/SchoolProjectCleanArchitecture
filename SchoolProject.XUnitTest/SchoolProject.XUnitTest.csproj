@@ -24,4 +24,13 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CoreTests\Students\Commands\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolProject.Core\SchoolProject.Core.csproj" />
+    <ProjectReference Include="..\SchoolProject.Data\SchoolProject.Data.csproj" />
+  </ItemGroup>
+
 </Project>
