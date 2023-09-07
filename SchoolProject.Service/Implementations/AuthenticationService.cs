@@ -229,8 +229,13 @@ namespace SchoolProject.Service.Implementations
                 if (user==null)
                     return "UserNotFound";
                 //Generate Random Number
-                Random generator = new Random();
-                string randomNumber = generator.Next(0, 1000000).ToString("D6");
+
+                //Random generator = new Random();
+                //string randomNumber = generator.Next(0, 1000000).ToString("D6");
+                var chars = "0123456789";
+                var random = new Random();
+                var randomNumber = new string(Enumerable.Repeat(chars, 6).Select(s => s[random.Next(s.Length)]).ToArray());
+
                 //update User In Database Code
                 user.Code= randomNumber;
                 var updateResult = await _userManager.UpdateAsync(user);
