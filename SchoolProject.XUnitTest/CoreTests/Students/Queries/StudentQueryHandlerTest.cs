@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using EntityFrameworkCore.Testing.Common;
 using FluentAssertions;
 using Microsoft.Extensions.Localization;
 using Moq;
@@ -8,6 +9,7 @@ using SchoolProject.Core.Features.Students.Queries.Results;
 using SchoolProject.Core.Mapping.Students;
 using SchoolProject.Core.Resources;
 using SchoolProject.Data.Entities;
+using SchoolProject.Data.Enums;
 using SchoolProject.Service.Abstracts;
 using System.Net;
 
@@ -53,7 +55,7 @@ namespace SchoolProject.XUnitTest.CoreTests.Students.Queries
         [Theory]
         [InlineData(3)]
         //[InlineData(2)]
-        public async Task Handle_StudentById_when_Student_NotFound_Return_StatusCode404(int id)
+        public async Task Handle_StudentById_where_Student_NotFound_Return_StatusCode404(int id)
         {
             //Arrange
             var department = new Department() { DID=1, DNameAr="هندسة البرمجيات", DNameEn="SE" };
@@ -75,7 +77,7 @@ namespace SchoolProject.XUnitTest.CoreTests.Students.Queries
         [Theory]
         [InlineData(1)]
         // [InlineData(2)]
-        public async Task Handle_StudentById_when_Student_Found_Return_StatusCode200(int id)
+        public async Task Handle_StudentById_where_Student_Found_Return_StatusCode200(int id)
         {
             //Arrange
             var department = new Department() { DID=1, DNameAr="هندسة البرمجيات", DNameEn="SE" };
@@ -95,6 +97,29 @@ namespace SchoolProject.XUnitTest.CoreTests.Students.Queries
             result.StatusCode.Should().Be(HttpStatusCode.OK);
             result.Data.StudID.Should().Be(id);
             result.Data.Name.Should().Be("mohamed");
+        }
+        [Fact]
+        public async Task Handle_StudentPaginated_Should_NotNull_And_NotEmpty()
+        {
+            //Arrange
+            var department = new Department() { DID=1, DNameAr="هندسة البرمجيات", DNameEn="SE" };
+
+            var studentList = new AsyncEnumerable<Student>(new List<Student>
+            {
+                new Student(){ StudID=1, Address="Alex", DID=1, NameAr="محمد",NameEn="mohamed",Department=department}
+            });
+
+            var query = new GetStudentPaginatedListQuery() { PageNumber=1, PageSize=10, OrderBy=StudentOrderingEnum.StudID, Search="mohamed" };
+            _studentServiceMock.Setup(x => x.FilterStudentPaginatedQuerable(query.OrderBy, query.Search)).Returns(studentList.AsQueryable());
+
+            var handler = new StudentQueryHandler(_studentServiceMock.Object, _mapperMock, _localizerMock.Object);
+
+            //Act
+            var result = await handler.Handle(query, default);
+            //Assert
+            result.Data.Should().NotBeNullOrEmpty();
+            result.Succeeded.Should().BeTrue();
+            result.Data.Should().BeOfType<List<GetStudentPaginatedListResponse>>();
         }
     }
 }
