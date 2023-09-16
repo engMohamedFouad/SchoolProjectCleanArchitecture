@@ -1,4 +1,4 @@
-﻿namespace SchoolProject.XUnitTest.Models
+﻿namespace SchoolProject.XUnitTest.TestModels
 {
     public class Car
     {

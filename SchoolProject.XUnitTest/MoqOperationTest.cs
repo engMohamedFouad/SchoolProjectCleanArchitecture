@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Moq;
-using SchoolProject.XUnitTest.Models;
 using SchoolProject.XUnitTest.MoqTest;
+using SchoolProject.XUnitTest.TestModels;
 
 namespace SchoolProject.XUnitTest
 {

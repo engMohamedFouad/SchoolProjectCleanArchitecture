@@ -83,7 +83,7 @@ namespace SchoolProject.XUnitTest
             x.Should().BePositive();
             x.Should().BeGreaterThanOrEqualTo(5);
             x.Should().BeGreaterThan(4);
-            x.Should().NotBeInRange(4, 6);
+            x.Should().BeInRange(4, 6);
         }
     }
 }

@@ -26,12 +26,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CoreTests\Students\Commands\" />
+    <ProjectReference Include="..\SchoolProject.Core\SchoolProject.Core.csproj" />
+    <ProjectReference Include="..\SchoolProject.Data\SchoolProject.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SchoolProject.Core\SchoolProject.Core.csproj" />
-    <ProjectReference Include="..\SchoolProject.Data\SchoolProject.Data.csproj" />
+    <None Update="xunit.runner.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
