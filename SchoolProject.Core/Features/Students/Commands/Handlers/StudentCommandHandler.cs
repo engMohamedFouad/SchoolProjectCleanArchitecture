@@ -56,7 +56,6 @@ namespace SchoolProject.Core.Features.Students.Commands.Handlers
             //Call service that make Edit
             var result = await _studentService.EditAsync(studentmapper);
             //return response
-            //return response
             if (result=="Success") return Success((string)_localizer[SharedResourcesKeys.Updated]);
             else return BadRequest<string>();
         }

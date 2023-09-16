@@ -11,8 +11,9 @@ using SchoolProject.Core.Resources;
 using SchoolProject.Data.Entities;
 using SchoolProject.Data.Enums;
 using SchoolProject.Service.Abstracts;
+using SchoolProject.XUnitTest.TestModels;
 using System.Net;
-
+[assembly: CollectionBehavior(CollectionBehavior.CollectionPerClass, MaxParallelThreads = 6)]
 namespace SchoolProject.XUnitTest.CoreTests.Students.Queries
 {
     public class StudentQueryHandlerTest
@@ -75,8 +76,10 @@ namespace SchoolProject.XUnitTest.CoreTests.Students.Queries
             result.StatusCode.Should().Be(HttpStatusCode.NotFound);
         }
         [Theory]
-        [InlineData(1)]
-        // [InlineData(2)]
+        //[InlineData(1)]
+        //[InlineData(2)]
+        //[ClassData(typeof(PassDataUsingClassData))]
+        [MemberData(nameof(PassDataToParamUsingMemberData.GetParamData), MemberType = typeof(PassDataToParamUsingMemberData))]
         public async Task Handle_StudentById_where_Student_Found_Return_StatusCode200(int id)
         {
             //Arrange
@@ -96,7 +99,7 @@ namespace SchoolProject.XUnitTest.CoreTests.Students.Queries
             //Assert
             result.StatusCode.Should().Be(HttpStatusCode.OK);
             result.Data.StudID.Should().Be(id);
-            result.Data.Name.Should().Be("mohamed");
+            result.Data.Name.Should().Be(studentList.FirstOrDefault(x => x.StudID==id).NameEn);
         }
         [Fact]
         public async Task Handle_StudentPaginated_Should_NotNull_And_NotEmpty()

@@ -1,4 +1,4 @@
-﻿using SchoolProject.XUnitTest.Models;
+﻿using SchoolProject.XUnitTest.TestModels;
 
 namespace SchoolProject.XUnitTest.MoqTest
 {
